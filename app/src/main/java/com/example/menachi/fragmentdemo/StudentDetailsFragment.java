@@ -1,18 +1,27 @@
 package com.example.menachi.fragmentdemo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
+import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.example.menachi.fragmentdemo.model.Model;
 import com.example.menachi.fragmentdemo.model.Student;
@@ -33,7 +42,8 @@ public class StudentDetailsFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
     private String id ;
-
+    boolean[] selected = new boolean[3];
+    String[] data = {"item 1", "item 2", "item 3"};
     private OnFragmentInteractionListener mListener;
 
     public StudentDetailsFragment() {
@@ -101,6 +111,54 @@ public class StudentDetailsFragment extends Fragment {
         TextView time =(TextView) view.findViewById(R.id.time);
         CheckBox check= (CheckBox)view.findViewById(R.id.strow_cb1);
         TextView date =(TextView) view.findViewById(R.id.date);
+        Button btn = (Button) view.findViewById(R.id.btnCheck);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle("MChoice Title");
+                builder.setMultiChoiceItems(data, selected, new
+                        DialogInterface.OnMultiChoiceClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which,
+                                                boolean isChecked) {
+                                selected[which] = isChecked;
+                            }
+                        });
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        String selects = "";
+                        for (int i = 0; i < selected.length; i++) {
+                            if (selected[i]) selects = selects + " " + data[i];
+                        }
+                        //   Toast.makeText(getActivity(), "OK" + selects,
+                        //    Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.setNegativeButton("CANCEL",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        });
+                builder.show();
+            }
+        });
+       // NumberPicker np = (NumberPicker) view.findViewById(R.id.np);
+
+//        //Set TextView text color
+////        tv.setTextColor(Color.parseColor("#ffd32b3b"));
+//
+//        //Populate NumberPicker values from minimum and maximum value range
+//        //Set the minimum value of NumberPicker
+//        np.setMinValue(0);
+//        //Specify the maximum value/number of NumberPicker
+//        np.setMaxValue(10);
+//
+//        //Gets whether the selector wheel wraps when reaching the min/max value.
+//        np.setWrapSelectorWheel(true);
+//                Log.d("tag","old val"+np.getValue());
+
         id1.setText(st.id);
         name.setText(st.name);
         phone.setText(st.phone);

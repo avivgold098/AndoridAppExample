@@ -470,9 +470,10 @@ containing a value of this type.
     public static final class id {
         public static final int AddressEdit=0x7f090011;
         public static final int Message1=0x7f09000d;
-        public static final int aaa=0x7f090021;
+        public static final int aaa=0x7f090022;
         public static final int all=0x7f090005;
         public static final int basic=0x7f090006;
+        public static final int btnCheck=0x7f090020;
         public static final int chains=0x7f090007;
         public static final int date=0x7f09001f;
         public static final int detAdr=0x7f09001c;
@@ -490,22 +491,22 @@ containing a value of this type.
         public static final int mainNameTv=0x7f09000e;
         public static final int mainPhoneTv=0x7f090010;
         public static final int mainSaveBtn=0x7f090015;
-        public static final int main_add=0x7f090026;
+        public static final int main_add=0x7f090027;
         public static final int main_container=0x7f090009;
-        public static final int main_edit=0x7f090027;
+        public static final int main_edit=0x7f090028;
         public static final int none=0x7f090008;
         public static final int packed=0x7f090003;
         public static final int parent=0x7f090000;
-        public static final int search=0x7f090020;
+        public static final int search=0x7f090021;
         public static final int spread=0x7f090001;
         public static final int spread_inside=0x7f090004;
-        public static final int stlist_list=0x7f090022;
-        public static final int strow_cb=0x7f090025;
+        public static final int stlist_list=0x7f090023;
+        public static final int strow_cb=0x7f090026;
         public static final int strow_cb1=0x7f09001d;
         public static final int strow_cb12=0x7f090012;
-        public static final int strow_id=0x7f090024;
+        public static final int strow_id=0x7f090025;
         public static final int strow_image=0x7f090018;
-        public static final int strow_name=0x7f090023;
+        public static final int strow_name=0x7f090024;
         public static final int time=0x7f09001e;
         public static final int wrap=0x7f090002;
     }

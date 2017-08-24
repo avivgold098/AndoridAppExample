@@ -165,6 +165,8 @@ public class StudentAdd extends Fragment  {
                             New.phone = phone.getText().toString();
                             New.name = nameEt.getText().toString();
                             New.time = time.getText().toString();
+                            Log.d("taggf","ag is here");
+                            Log.d("taggf",""+time.getText().toString());
                             New.date = date.getText().toString();
                             Model.instace.addStudent(New);
                             DialogFragment dialog = new SaveStudentDialogFragment();
